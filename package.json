@@ -1,0 +1,24 @@
+{
+  "name": "chat-draw-sockets",
+  "version": "1.0.0",
+  "description": "A node app that uses sockets to make a drawing and chat app in realtime",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elizabethgulsby/chatDraw.git"
+  },
+  "keywords": [
+    "socketio",
+    "nodejs",
+    "canvas"
+  ],
+  "author": "Elizabeth Gulsby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elizabethgulsby/chatDraw/issues"
+  },
+  "homepage": "https://github.com/elizabethgulsby/chatDraw#readme"
+}
