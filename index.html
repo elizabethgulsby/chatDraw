@@ -1,0 +1,54 @@
+<!-- What's in this file will be run by the browser -->
+<!-- server - giving html to browser; browser then has it and runs it -->
+<!-- client = browser stuff -->
+<!-- server = index.js -->
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+<div class="container">
+	<div class="content">
+		<h1>Hi there!</h1>
+
+		<div class="col-sm-3">
+			<h3>Enter your message here:</h3>
+			<form onsubmit="sendChatMessage()">
+				<input type="text" id="chat-message" />
+				<input type="submit" class="btn btn-primary" value="Send" />
+			</form>
+		</div>
+
+		<div class="col-sm-3" id="userNames">
+			<!-- Our userNames will go here as they show up -->
+		</div>
+
+		<div class="col-sm-6" id="userChats">
+			<!-- All chats go here as they show up -->
+		</div>
+
+		<div class="tol-bar col-sm-12">
+			<input type="color" id="color-picker" />
+			<label>Choose your marker thickness:</label>
+			<input type="number" id="thickness" placeholder=10 />
+		</div>
+	</div>
+
+	<div class="text-center">
+		<canvas id="canvas" width="500px" height="500px"></canvas>
+	</div>
+</div>
+<!-- makes socket.io available -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.js"></script>
+<script type="text/javascript" src="scripts.js"></script>
+
+</body>
+</html>
