@@ -23,5 +23,14 @@ canvas {
 
 #userChats {
 	overflow-y: scroll;
-	max-height:  615px;
+	height:  615px;
+	position: relative;
+}
+
+.chat-wrapper {
+	position: relative;
+}
+
+.chat {
+
 }

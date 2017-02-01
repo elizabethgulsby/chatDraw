@@ -50,6 +50,12 @@ io.sockets.on('connect', (socket) => { //only happens once - initially - wheneve
 			date: new Date()
 		});
 	});
+
+	//need a socket to collect names of users logging in to server - need a separate login page? (store their login info in localstorage?)
+
+	//need a socket for users to guess what's being drawn - need an input box?
+
+
 	// outputs drawing to clients when drawing on canvas
 	socket.on('drawingToServer', (drawingData) => {
 		if (drawingData.lastMousePosition !== null) {

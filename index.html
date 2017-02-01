@@ -17,22 +17,28 @@
 <body>
 <div class="container">
 	<div class="content col-sm-6">
-		<h1>Hi there!</h1>
+		<h1>Pictionary!</h1>
 
 		<div class="col-sm-6">
-			<h3>Enter your message here:</h3>
-			<form onsubmit="sendChatMessage()">
-				<input type="text" id="chat-message" />
+			<h3>Enter your username here:</h3>
+			<form >
+				<input type="text" />
 				<input type="submit" class="btn btn-primary" value="Send" />
 			</form>
 			<div class="col-sm-12" id="userNames">
 			<!-- Our userNames will go here as they show up -->
-		</div>
+			</div>
 		</div>
 
-		<div class="col-sm-6" id="userChats">
+		<div class="col-sm-6 chat-wrapper">
+			<div class="col-sm-12" id="userChats"></div>
 			<!-- All chats go here as they show up -->
+			<form class="chat col-sm-12" onsubmit="sendChatMessage()">
+				<input type="text" id="chat-message" />
+				<input type="submit" class="btn btn-primary btn-sm" value="Send" />
+			</form>
 		</div>
+		
 
 	</div>
 
@@ -40,10 +46,10 @@
 	<div class="text-center">
 		<div class="tol-bar col-sm-6">
 			<input type="color" id="color-picker" />
-			<label>Choose your marker thickness:</label>
+			<label>Choose thickness:</label>
 			<input type="number" id="thickness" placeholder=10 />
 		</div>
-		<canvas id="canvas" width="500px" height="650px"></canvas>
+		<canvas id="canvas" width="500px" height="684px"></canvas>
 	</div>
 </div>
 

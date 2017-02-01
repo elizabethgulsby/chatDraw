@@ -15,10 +15,13 @@ socketio.on('users', (socketUsers) => {
 
 socketio.on('messageToClient', (messageObject) => {
 	document.getElementById('userChats').innerHTML += '<div class="message">' + messageObject.message + ' -- ' + messageObject.date + '</div>';
+	//displaying newest chats at bottom
+	var userChats = document.getElementById('userChats');
+	userChats.scrollTop = userChats.scrollHeight;
 });
 
 // !!!!!!!!!!!!!!!!!!!!!CLIENT FUNCTIONS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-function sendChatMessage() {  //fires whenever user clicks send button
+function sendChatMessage() {  //fires whenever user clicks send buttons
 	event.preventDefault();
 	var messageToSend = document.getElementById('chat-message').value;
 	socketio.emit('messageToServer', {//user sends event, then data sent to server (here in object notation)
