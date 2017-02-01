@@ -47,7 +47,7 @@ io.sockets.on('connect', (socket) => { //only happens once - initially - wheneve
 		console.log("Someone sent a message!  It is", messageObject.message);
 		io.sockets.emit('messageToClient', { //message that will be emitted to the client on send
 			message: messageObject.message,
-			date: new Date()
+			date: new Date().toLocaleTimeString()
 		});
 	});
 
