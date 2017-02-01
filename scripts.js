@@ -1,7 +1,7 @@
 // !!!!!!!!!!!!!!!!!WEB SOCKET SECTION!!!!!!!!!!!!!!!!!!!
 //console.log(io)
 // connection request via sockets 
-var socketio = io.connect('http://127.0.0.1:8080');
+var socketio = io.connect('http://35.165.246.138:8080');
 
 // each time you connect, a new user is added to the socketUsers array (new http, new socket requests - emits to all users the users event)
 socketio.on('users', (socketUsers) => {
