@@ -28,6 +28,8 @@ var server = http.createServer((req, res) => {  //commented out because static-s
 var socketIo = require('socket.io');
 // Sockets are going to listen to the server, which is listening on port 8080
 var io = socketIo.listen(server); 
+
+//so we can have multiple users
 var socketUsers = [];
 
 // Handle socket connections... (event handler (listener) below - "on")
@@ -48,6 +50,7 @@ io.sockets.on('connect', (socket) => { //only happens once - initially - wheneve
 			date: new Date()
 		});
 	});
+	// outputs drawing to clients when drawing on canvas
 	socket.on('drawingToServer', (drawingData) => {
 		if (drawingData.lastMousePosition !== null) {
 			io.sockets.emit('drawingToClients', drawingData);

@@ -1,4 +1,27 @@
+.container {
+	min-width: 1200px;
+}
+
+h1 {
+	max-width: 200px;
+}
+
 canvas {
 	border: 1px solid black;
 	float: left;
+}
+
+.content {
+	float:  right;
+	/* min-width: 769px; */
+}
+
+#userNames {
+	overflow-y: scroll;
+	max-height:  500px;
+}
+
+#userChats {
+	overflow-y: scroll;
+	max-height:  615px;
 }
