@@ -21,13 +21,15 @@
 
 		<div class="col-sm-6">
 			<h3>Enter your username here:</h3>
-			<form >
-				<input type="text" />
+			<form id="username-input" onsubmit="getUserName()">
+				<input type="text" id="username" />
 				<input type="submit" class="btn btn-primary" value="Send" />
 			</form>
+
 			<div class="col-sm-12" id="userNames">
 			<!-- Our userNames will go here as they show up -->
 			</div>
+			
 		</div>
 
 		<div class="col-sm-6 chat-wrapper">

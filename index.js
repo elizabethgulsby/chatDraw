@@ -36,11 +36,17 @@ var socketUsers = [];
 // let me know anytime a socket connects, run attached anonymous function
 io.sockets.on('connect', (socket) => { //only happens once - initially - whenever someone connects to socket
 	console.log("Someone connected by socket!");
-	socketUsers.push({ //push onto the array the following properties
-		socketID: socket.id, //whatever the id is of the socket that just connected 
-		name: "Anonymous"
-	})
-	io.sockets.emit('users', socketUsers); //we created users event - if someone connects, send the event and send the socketUsers array along with it
+
+
+	//getting username input from getUserName() and displaying it in userNames;
+	socket.on('userNameInput', (nameObject) => {
+		socketUsers.push({ //push onto the array the following properties
+			socketID: socket.id, //whatever the id is of the socket that just connected 
+			name: nameObject.name //user's name from input box
+		})
+		io.sockets.emit('users', socketUsers); //we created users event - if someone connects, send the event and send the socketUsers array along with it
+	});
+	
 
 	//when someone connects, we let everyone know someone connected, and then we add a listener to that socket for that event (we have to attach a listener to every single socket) - if someone sends a message, we emit it to all sockets
 	socket.on('messageToServer', (messageObject) =>{
@@ -51,7 +57,6 @@ io.sockets.on('connect', (socket) => { //only happens once - initially - wheneve
 		});
 	});
 
-	//need a socket to collect names of users logging in to server - need a separate login page? (store their login info in localstorage?)
 
 	//need a socket for users to guess what's being drawn - need an input box?
 

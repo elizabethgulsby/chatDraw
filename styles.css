@@ -11,6 +11,10 @@ canvas {
 	float: left;
 }
 
+.tol-bar {
+	width: 500px;
+}
+
 .content {
 	float:  right;
 	/* min-width: 769px; */
@@ -19,12 +23,14 @@ canvas {
 #userNames {
 	overflow-y: scroll;
 	max-height:  500px;
+	/* border:  1px solid black; */
 }
 
 #userChats {
 	overflow-y: scroll;
 	height:  615px;
 	position: relative;
+	border:  1px solid black;
 }
 
 .chat-wrapper {

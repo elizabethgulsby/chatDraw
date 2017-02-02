@@ -1,7 +1,7 @@
 // !!!!!!!!!!!!!!!!!WEB SOCKET SECTION!!!!!!!!!!!!!!!!!!!
 //console.log(io)
 // connection request via sockets 
-var socketio = io.connect('http://35.165.246.138:8080');
+var socketio = io.connect('http://127.0.0.1:8080');
 
 // each time you connect, a new user is added to the socketUsers array (new http, new socket requests - emits to all users the users event)
 socketio.on('users', (socketUsers) => {
@@ -21,12 +21,23 @@ socketio.on('messageToClient', (messageObject) => {
 });
 
 // !!!!!!!!!!!!!!!!!!!!!CLIENT FUNCTIONS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+var username;
+function getUserName() {
+	event.preventDefault();
+	username = document.getElementById('username').value;
+	// alert(username);
+	socketio.emit('userNameInput', {
+		name: username
+	});
+	document.getElementById('username').value = ''; 
+}
+
 function sendChatMessage() {  //fires whenever user clicks send buttons
 	event.preventDefault();
 	var messageToSend = document.getElementById('chat-message').value;
 	socketio.emit('messageToServer', {//user sends event, then data sent to server (here in object notation)
 		message: messageToSend,
-		name: "Anonymous"
+		// name: "Anonymous"
 	});
 	document.getElementById('chat-message').value = ''; 
 }
